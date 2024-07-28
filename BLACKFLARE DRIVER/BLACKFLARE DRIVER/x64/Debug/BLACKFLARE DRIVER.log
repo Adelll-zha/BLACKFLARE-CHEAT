@@ -1,0 +1,9 @@
+﻿  BLACKFLARE DRIVER.cpp
+C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\BLACKFLARE DRIVER\BLACKFLARE DRIVER.cpp(105,30): warning C4244: '*=' : conversion de 'double' en 'int', perte possible de données
+C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\BLACKFLARE DRIVER\BLACKFLARE DRIVER.cpp(106,30): warning C4244: '*=' : conversion de 'double' en 'int', perte possible de données
+C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\BLACKFLARE DRIVER\BLACKFLARE DRIVER.cpp(135,16): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\BLACKFLARE DRIVER\BLACKFLARE DRIVER.cpp(136,16): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+  LINK : C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\x64\Debug\BLACKFLARE DRIVER.dll introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+     Création de la bibliothèque C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\x64\Debug\BLACKFLARE DRIVER.lib et de l'objet C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\x64\Debug\BLACKFLARE DRIVER.exp
+LINK : warning LNK4199: /DELAYLOAD:C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\BLACKFLARE DRIVER\lib\\ ignoré ; aucune importation trouvée à partir de C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\BLACKFLARE DRIVER\lib\\
+  BLACKFLARE DRIVER.vcxproj -> C:\Users\romai\OneDrive\Bureau\BLACKFLARE DRIVER\x64\Debug\BLACKFLARE DRIVER.dll
