@@ -38,9 +38,8 @@ title = '''
 
 _______________________________________________________________________________________________________________                                                                                         
 '''
+clear()
 
-
-LICENSE_KEYS_URL = 'https://palegreen-cattle-895473.hostingersite.com/dfvdsvsvsvsrbvdnhdftbsbdhtsfshdsgvqvbrtnbsbstvvsvsqv/manage.json'
 PARAMS_FILE = './params.json'
 UPLOAD_FOLDER = './uploads'
 if not os.path.exists(UPLOAD_FOLDER):
@@ -90,45 +89,6 @@ maxlen_global = MAXLEN_DEFAULT
 micro_correction_global = MICRO_CORRECTION_DEFAULT
 
 tolerance = 5
-
-def hash_key(key):
-    return hashlib.sha256(key.encode('utf-8')).hexdigest()
-
-def fetch_license_keys():
-    try:
-        response = requests.get(LICENSE_KEYS_URL)
-        response.raise_for_status()
-        data = response.json()
-        license_keys = {key: datetime.fromtimestamp(timestamp) for key, timestamp in data.items()}
-        return license_keys
-    except (requests.RequestException, ValueError) as e:
-        print(colored("SERVER CLOSE", 'red'))
-        return {}
-
-def validate_license_key(key):
-    clear()
-    print(colored(title, 'cyan'))
-
-    hashed_key = hash_key(key)
-    license_keys = fetch_license_keys()
-    if (hashed_key in license_keys) and (datetime.now() < license_keys[hashed_key]):
-        print(colored(f"Expiration date for key {hashed_key}: {license_keys[hashed_key]}", 'yellow'))
-        print(colored("License key is valid!", 'green'))
-        print(colored("_______________________________________________________________________________________________________________", 'cyan'))
-        print("")
-        return True
-    else:
-        print(colored("Key not found in license keys or has expired.", 'red'))
-    return False
-
-def license_required(f):
-    def wrapper(*args, **kwargs):
-        if 'license_key' in session and validate_license_key(session['license_key']):
-            return f(*args, **kwargs)
-        else:
-            return redirect(url_for('license'))
-    wrapper.__name__ = f.__name__
-    return wrapper
 
 def send_size(width, height):
     message = f"{width},{height}"  # Prefixing with 'size:' for clear message type
@@ -390,19 +350,8 @@ class Flare:
 
 flare = Flare(center_x_global - fov_x_global // 2, center_y_global - fov_y_global // 2, fov_x_global, fov_y_global, np.array([lower_color_h_global, lower_color_s_global, lower_color_v_global]), np.array([upper_color_h_global, upper_color_s_global, upper_color_v_global]), threshold_global, intensity_global, delay_global, maxlen_global, tolerance, micro_correction_global)
 
-@app.route('/license', methods=['GET', 'POST'])
-def license():
-    if request.method == 'POST':
-        license_key = request.form['license_key']
-        if validate_license_key(license_key):
-            session['license_key'] = license_key
-            return redirect(url_for('index'))
-        else:
-            return colored("Invalid or expired license key.", 'red')
-    return render_template('license.html')
 
 @app.route('/', methods=['GET', 'POST'])
-@license_required
 def index():
     global fov_x_global, fov_y_global, center_x_global, center_y_global, intensity_global, delay_global, lower_color_h_global, lower_color_s_global, lower_color_v_global, upper_color_h_global, upper_color_s_global, upper_color_v_global, threshold_global, maxlen_global, flare, tolerance, micro_correction_global
 
