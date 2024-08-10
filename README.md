@@ -3,6 +3,12 @@
 
 BlackFlare is a color aimbot for Valorant that provides a driver-based solution. It uses Vanguard’s own bypasses and has remained undetectable for the past 3 months.
 
+
+> [!WARNING]
+> Play in a legitimate configuration to avoid being banned by a Rioter !
+
+
+
 ![Capture d'écran 2024-07-24 192720](https://github.com/user-attachments/assets/3fdca863-7aaa-4618-b0fa-5f558f6ce9d0)
 
 
@@ -39,5 +45,5 @@ https://www.python.org/downloads/
 
 ❤️ENJOY  
 
-> [!TIPS]
+> [!TIP]
 > For help : https://discord.gg/blackflare
