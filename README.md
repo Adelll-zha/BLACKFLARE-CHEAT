@@ -20,6 +20,10 @@ BlackFlare is a color aimbot for Valorant that provides a driver-based solution.
 
 https://uupdump.net/download.php?id=0e16a39c-aa41-44be-9663-e780dd452f1e&pack=en-us&edition=professional
 
+**Install python**:
+
+https://www.python.org/downloads/
+
 **Need to enable core isolation:**
 
 ![image](https://github.com/user-attachments/assets/99de80f7-75d6-4fc5-819a-1400460d5fa9)
